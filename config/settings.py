@@ -35,9 +35,9 @@ DEVELOPMENT = os.environ.get('DEVELOPMENT')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
-if eval(DEBUG) is True:
+if DEBUG == 'True':
     print('Debug mode is on.')
-elif eval(DEBUG) is False:
+elif DEBUG is False:
     print('Debug mode is off.')
 
 ALLOWED_HOSTS = ['chi-sono-io.herokuapp.com', 'localhost']
