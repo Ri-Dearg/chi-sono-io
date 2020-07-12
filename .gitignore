@@ -1,0 +1,9 @@
+env.py
+*.pyc
+*.sqlite3
+.gitpod.yml
+htmlcov/
+.coverage
+*.css
+main.css
+main.css.map

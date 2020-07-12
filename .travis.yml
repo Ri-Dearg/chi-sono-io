@@ -1,0 +1,13 @@
+language: python
+python:
+- '3.8'
+services:
+- postgresql
+install:
+- pip install -r requirements.txt
+script:
+- python manage.py test --keepdb
+deploy:
+  provider: heroku
+  api_key:
+    secure: mHrelTZCzVtICbDtloaZX51tli3DUKGYu4kvofQV+6JWEUYAqkFWia/f/VZ1vtZjBZabhgC9HDqGcuzHYhdCTGR/NLHv5mzzyPz3XkyaJWahvIML7TIIfSg6vnsFQn2XB5xLw4E7zBCXj4VdzDUn/NL91+JqvGaz+gkIPsB5SrautoQfGVAXLo1PNBQDm2RVO7KfzZs8mhdHg2pwBloYYmgaYuzSV/Its2KZewI2fvTH/2Pk2Qvl677BctzcIekwDhaAyBzAa/+2SY7iU6FXclAj4pRnet7wFZDeEABg+oR6mUtbkAsGMn+Z9/HAYU8x3/7lVSBY6xPrVKjH+edDxg2o3EWsQb/DA1DYQ/apywYNlfkZHP3gZRlxuuH9+yvOPPKHnLOozKStHgSUbqwUvIGHdfQEB14ZwCKWoqVoa+8nQen9ituzxOSsdAA6jvRL8/L25ohw252QKLRWA9JCc74UrRpNY3el9gAZ6FYOtwURJqlimUCysTlbjK2HEaK5kuD+uXhb/VlB0T4A2Srj3u88qewWvN/rqBt5FOnfLuYASqM7QrlIyObkqTTWrZnzkGc5gNzFvuFK/mKLnKesoqBiwawpHixd1tK5+E28Fh1hlag3pEfXIkUimZ2ksRaWRjxVi62H4GOi81DsoYDccVD6Jds6zDTQvWxXyV6DZK0=
