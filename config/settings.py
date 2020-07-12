@@ -40,7 +40,7 @@ if eval(DEBUG) is True:
 elif eval(DEBUG) is False:
     print('Debug mode is off.')
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['chi-sono-io.herokuapp.com', 'localhost']
 
 
 # Application definition
