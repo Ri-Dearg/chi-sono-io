@@ -1,0 +1,45 @@
+{% load static %}
+<header class="fixed-top container-fluid shadow p-0">
+
+    <nav class="navbar bg-dark navbar-dark w-100">
+    <div class="d-flex flex-grow-1">
+        <span class="w-100 d-block"></span>
+        <h1 class="my-2 brand-logo navbar-brand"><a href="{% url 'people:person-list' %}">CHI.SONO.IO</a></h1>
+                <!-- <form class="col-11 mx-auto" method="GET" action="{% url 'people:person-list' %}">
+                    <div class="input-group w-75 mx-auto">
+                        <input class="form-control" type="text" name="query" placeholder="Cerca" />
+                        <div class="input-group-append">
+                            <button class="btn btn-info" type="submit">
+                                <object class="search-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
+                                    <img src="{% static 'icons/search.svg' %}" alt="Cerca" />
+                                </object>
+                            </button>
+                        </div>
+                    </div>
+                </form> -->
+                <div class="w-100 text-right">
+                    <button type="button">
+                        <object class="search-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
+                            <img src="{% static 'icons/search.svg' %}" alt="Cerca" />
+                        </object>                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+                <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto flex-nowrap">
+                        <li class="nav-item {% if home_active %}active{% endif %}">
+                            <a class="nav-link nav-link text-right pr-3" href="">Persone{% if home_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        </li>
+                        <li class="nav-item {% if about_active %}active{% endif %}">
+                            <a class="nav-link nav-link text-right pr-3" href="">Il Progetto{% if about_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        </li>
+                        <li class="nav-item {% if contact_active %}active{% endif %}">
+                            <a class="nav-link nav-link text-right pr-3" href="">Contatto{% if contact_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+</header>

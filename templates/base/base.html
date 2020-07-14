@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %} {% load sass_tags %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="msapplication-config" content="/browserconfig.xml">
+        <meta name="msapplication-TileColor" content="#339237">
+        <meta name="theme-color" content="#339237">
+
+        <link rel="icon" href="{% static 'icons/favicon-32x32.png' %}" />
+        <link rel="stylesheet" type="text/css" href="{% sass_src 'css/main.scss' %}" />
+
+        <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+
+        <title>CHI.SONO.IO | {% block head_title %}{% endblock %}</title>
+    </head>
+
+    <body class="body-mods bg-dark">
+        <div class="preloader justify-content-center align-items-center bg-dark">
+            <div class="spinner-border text-secondary bg-dark" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        {% include 'base/includes/header.html' %}
+
+        <section class="container-fluid shadow bg-dark min-vh-100">
+            {% block content %} {% endblock %}
+        </section>
+
+        <div class="toast-position" aria-live="polite" aria-atomic="true">
+            <div class="toast-wrapper">
+                {% if messages %} {% for message in messages %} {% include 'base/includes/messages.html' %} {% endfor %} {% endif %}
+            </div>
+        </div>
+
+        {% block postloadjs %}
+        <script>
+        window.onload = function(){
+            window.document.body.onload = 
+            $(".preloader").fadeOut(1200);
+        }
+        </script>
+        {% endblock %}
+    </body>
+</html>

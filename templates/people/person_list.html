@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %} {% block head_title %}Home{% endblock%} {% load static %} {% block content %} {% if 'query' in request.GET %}
+<h1 class="text-center heading-font text-primary">{{ request.GET.query }}</h1>
+<hr />
+{% endif %}
+<div class="row infinite-container">
+    {% if people %} {% for person in people %} {% include 'people/includes/person_box.html' %} {% endfor %} {% else %}
+    <div class="col text-center">
+        <h4 class="text-dark">Nessun Risultato</h4>
+        <h2 class="text-primary heading-font">Conosci nostre altre persone?</h2>
+        <a class="btn btn-lg btn-danger mt-4 w-25" href="{% url 'people:person-list' %}">Home</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock%}
