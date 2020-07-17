@@ -39,10 +39,11 @@
         </div>
 
         {% block postloadjs %}
+        <script src="{% static 'js/script.js' %}"></script>
         <script>
         window.onload = function(){
             window.document.body.onload = 
-            $(".preloader").fadeOut(1200);
+            fadePreload()
         }
         </script>
         {% endblock %}

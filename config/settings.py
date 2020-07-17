@@ -54,8 +54,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Apps for compiling SASS
     'sass_processor',
+    # App for Ajax requests
+    'django_ajax',
     # My apps
-    'people'
+    'people',
 ]
 
 
