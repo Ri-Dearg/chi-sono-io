@@ -14,7 +14,6 @@
 
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-        <script src="https://js.stripe.com/v3/"></script>
 
         <title>CHI.SONO.IO | {% block head_title %}{% endblock %}</title>
     </head>
@@ -37,6 +36,9 @@
                 {% if messages %} {% for message in messages %} {% include 'base/includes/messages.html' %} {% endfor %} {% endif %}
             </div>
         </div>
+
+{% block modal%}
+{% endblock %}
 
         {% block postloadjs %}
         <script src="{% static 'js/script.js' %}"></script>

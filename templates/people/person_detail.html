@@ -1,3 +1,22 @@
-{% if active_person %}
-<p>{{ active_person.name }} hello</p>
-{% endif %}
+<div class="row">
+    <div class="col-12 col-md-5 text-center">
+            <img class="img-fluid bg-white p-1" src="{{ active_person.portrait.url }}" alt="{{ active_person.name }}">
+    </div>
+    <div class="col-12 col-md-7 d-flex">
+        <div class="row my-auto">
+            <div class="col-12">
+                <h3 class="text-white text-center text-md-left heading-font mt-2 mt-md-0">{{ active_person.name }}</h3>
+            </div>
+            <div class="col-12">
+                <h6 class="text-white text-center text-md-left font-italic">"{{ active_person.blurb }}"</h6>
+            </div>
+            <div class="col-12" id="player">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+            <div class="col-12">
+                <p class="text-white text-justify mt-3">{{ active_person.story }}</p>
+            </div>
+</div>
