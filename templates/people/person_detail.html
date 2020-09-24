@@ -1,0 +1,20 @@
+<div class="row mx-0 fade-load rounded" style="background-image: url('{{ active_person.pattern1.url }}')">
+    <div class="col-12 col-md-5 text-center rounded p-5">
+            <img class="img-fluid bg-white p-1 fade-load" src="{{ active_person.portrait.url }}" alt="{{ active_person.name }}">
+    </div>
+    <div class="col-12 col-md-7 d-flex px-0">
+        <div class="row w-100 align-content-center rounded m-5" style="background-color: {{ active_person.pattern1_bg }}">
+            <div class="col-12">
+                <h3 class="text-center text-md-left heading-font mt-3" style="color: {{ active_person.pattern1_txt }}">{{ active_person.name }}</h3>
+                <h6 class="text-center text-md-left font-italic" style="color: {{ active_person.pattern1_txt }}">"{{ active_person.blurb }}"</h6>
+            </div>
+            <div class="col-12 mb-3 fade-load" id="player">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+            <div class="col-12" style="background-color: {{ active_person.pattern1_bg }}">
+                <p class="text-justify m-5" style="color: {{ active_person.pattern1_txt }}">{{ active_person.story }}</p>
+            </div>
+</div>
