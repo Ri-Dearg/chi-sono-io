@@ -24,7 +24,7 @@ class TestPeopleViews(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
-        self.assertTemplateUsed(response, 'people/includes/person_detail.html')
+        self.assertTemplateUsed(response, 'people/person_detail.html')
         self.assertTemplateUsed(response, 'people/includes/person_box.html')
 
         self.assertQuerysetEqual(response.context['people'],
