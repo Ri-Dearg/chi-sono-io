@@ -7,7 +7,8 @@ var player;
 var firstRun = true 
 
 function onPlayerReady(event) {
-    fadePreload()
+    const modal = $("#person-modal").contents();
+    modal.find(".fade-load").on("load", fadePreload)
 }
 
 function createVideoListener() {
@@ -42,7 +43,6 @@ function createVideo(videoUrl) {
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        console.log('nc')
         firstRun = false
     }
 }
