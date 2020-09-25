@@ -1,9 +1,10 @@
 var infinite = new Waypoint.Infinite({
     element: $(".infinite-container")[0],
     onBeforePageLoad: function () {
-        $(".spinner-border").show();
+        $(".infinite-loader").show();
     },
     onAfterPageLoad: function () {
-        $(".spinner-border").hide();
+        ajaxModal()
+        $(".infinite-loader").hide();
     }
 });

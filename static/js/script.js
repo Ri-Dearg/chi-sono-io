@@ -70,11 +70,13 @@ function openDetail(id, serializedData, formUrl) {
     });
 }
 
-$(`.detail-form`).on("submit", function (ev) {
-    // stops form from sending
-    ev.preventDefault();
-    var id = this.id.slice(3);
-    var serializedData = $(this).serialize();
-    var formUrl = this.action;
-    openDetail(id, serializedData, formUrl);
-});
+function ajaxModal() {
+    $(`.detail-form`).on("submit", function (ev) {
+        // stops form from sending
+        ev.preventDefault();
+        var id = this.id.slice(3);
+        var serializedData = $(this).serialize();
+        var formUrl = this.action;
+        openDetail(id, serializedData, formUrl);
+    });
+}

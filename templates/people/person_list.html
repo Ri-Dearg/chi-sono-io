@@ -19,8 +19,8 @@
 {% endif %}
 
 <!-- The loading spinner for the scroll. -->
-<div class="d-flex justify-content-center text-secondary d-none mt-3">
-    <div class="spinner-border" role="status">
+<div class="d-flex justify-content-center text-secondary bg-dark d-none mt-3">
+    <div class="spinner-border infinite-loader" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
@@ -38,4 +38,7 @@
 <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'js/infinite.min.js' %}"></script>
 <script src="{% static 'js/infinite_settings.js' %}"></script>
+<script>
+ajaxModal()
+</script>
 {% endblock %}
