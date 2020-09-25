@@ -18,6 +18,7 @@ function createVideoListener() {
             width: '640',
             videoId: interviewVideo,
             playerVars: {
+                'hl': 'it',
                 'enablejsapi': 1,
                 'origin': window.location.origin,
             },

@@ -21,5 +21,5 @@ def person_detail_ajax(request, person_id):
     active_person = Person.objects.get(pk=person_id)
     video = active_person.video
 
-    return render(request, 'people/person_detail.html',
+    return render(request, 'people/includes/detail_modal.html',
                   {'active_person': active_person}), {'video': video}
