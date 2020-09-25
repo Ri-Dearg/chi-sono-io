@@ -8,8 +8,8 @@
             </button>
         </form>
         <div class="row card-body bg-dark mx-0 px-0 pt-1 pb-0">
-            <a href="#"><h4 class="col-12 card-text text-white heading-font mb-1 pl-1">{{ person.name }}</h4></a>
-            <p class="text-primary font-italic mb-2">"{{ person.blurb }}"</p>
+            <a href="#" class="col-12 px-0"><h4 class="card-text text-white heading-font mb-1 pl-1">{{ person.name }}</h4></a>
+            <p class="col-12 text-primary font-italic px-0 mb-2">"{{ person.blurb }}"</p>
             <p class="col-12 text-white mb-0 p-0">{% for tag in person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="btn btn-light text-dark rounded-sm mb-1 px-1 py-0">{{ tag }}</a> {% endfor %}</p>
         </div>
     </article>
