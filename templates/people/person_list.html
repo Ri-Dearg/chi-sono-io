@@ -14,6 +14,17 @@
 
 <button class="d-none" id="modal-trigger" data-toggle="modal" data-target="#person-modal"></button>
 
+{% if people.has_next %} 
+<a class="infinite-more-link d-none" href="{{ request.path }}?page={{ people.next_page_number }}"></a>
+{% endif %}
+
+<!-- The loading spinner for the scroll. -->
+<div class="d-flex justify-content-center text-secondary d-none mt-3">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
 {% endblock%}
 
 {% block modal%}
@@ -21,3 +32,10 @@
         {% include 'people/includes/detail_modal.html' %}
     </div>
 {% endblock%}
+
+{% block postloadjs %} {{ block.super }}
+<!-- Scripts for the infinite scroll feature. -->
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<script src="{% static 'js/infinite_settings.js' %}"></script>
+{% endblock %}
