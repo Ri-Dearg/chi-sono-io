@@ -45,6 +45,10 @@ Basic Layout
     width: 100%;
 }
 
+.border-4 {
+    border-width: 4px !important;
+}
+
 /*--------------------------------------------------------------------------
 Fonts
 --------------------------------------------------------------------------*/
@@ -57,7 +61,12 @@ Fonts
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
     color: #f8f8f8;
-    letter-spacing: 1rem;
+    @media (max-width: 424px) {
+        letter-spacing: 0.5rem;
+    }
+    @media (min-width: 425px) {
+        letter-spacing: 1rem;
+    }
     font-weight: 800
 }
 
@@ -115,11 +124,20 @@ Product Box
 
 @media (min-width: 768px) {  
  
-.card-img-top {
-    max-width: 500px;
-}
+    .card-img-top {
+        max-width: 500px;
+    }
 }
 
+#player-container {
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+#player {
+    top: 0;
+    left: 0;
+}
 
 /*--------------------------------------------------------------------------
 SVG Icons

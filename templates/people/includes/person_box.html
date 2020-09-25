@@ -1,9 +1,9 @@
 {% load static %}
-<div class="col-12 col-md-4 infinite-item">
-    <article class="card border-0">
+<div class="col-12 col-md-4 infinite-item mb-3">
+    <article class="card border-0 bg-dark">
         <form action="{% url 'people:person-detail-ajax' person.id %}" id="df-{{ person.id }}" class="text-center detail-form" method="GET">
             <input type="hidden" name="item-id" value="{{ person.id }}" />
-            <button type="submit" class="btn btn-link m-1 p-0">
+            <button type="submit" class="btn btn-link border border-white border-4 m-1 p-0">
                 <img src="{{ person.portrait.url }}" class="card-img-top img-fluid" alt="{{ person.name }}" />
             </button>
         </form>

@@ -17,29 +17,28 @@
                         </div>
                     </div>
                 </form> -->
-                <div class="w-100 text-right">
-                    <button type="button">
-                        <object class="search-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
-                            <img src="{% static 'icons/search.svg' %}" alt="Cerca" />
-                        </object>                    </button>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-
-                <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto flex-nowrap">
-                        <li class="nav-item {% if home_active %}active{% endif %}">
-                            <a class="nav-link nav-link text-right pr-3" href="">Persone{% if home_active %}<span class="sr-only">(current)</span>{% endif %}</a>
-                        </li>
-                        <li class="nav-item {% if about_active %}active{% endif %}">
-                            <a class="nav-link nav-link text-right pr-3" href="">Il Progetto{% if about_active %}<span class="sr-only">(current)</span>{% endif %}</a>
-                        </li>
-                        <li class="nav-item {% if contact_active %}active{% endif %}">
-                            <a class="nav-link nav-link text-right pr-3" href="">Contatto{% if contact_active %}<span class="sr-only">(current)</span>{% endif %}</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div class="d-flex w-100 text-right align-content-center">
+            <!-- <button type="button">
+                <object class="search-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
+                    <img src="{% static 'icons/search.svg' %}" alt="Cerca" />
+                </object>                    </button> -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item {% if home_active %}active{% endif %}">
+                <a class="nav-link nav-link text-right pr-3" href="">Persone{% if home_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {% if about_active %}active{% endif %}">
+                <a class="nav-link nav-link text-right pr-3" href="">Il Progetto{% if about_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {% if contact_active %}active{% endif %}">
+                <a class="nav-link nav-link text-right pr-3" href="">Contatto{% if contact_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </header>
