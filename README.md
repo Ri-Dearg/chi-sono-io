@@ -38,5 +38,10 @@ We continually tweak and adjust this template to help give you the best experien
 
 Happy coding!
 
-
+<!-- https://www.h3xed.com/web-development/how-to-make-a-responsive-100-width-youtube-iframe-embed -->
 <!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by 0melapics - www.freepik.com</a> -->
+<!-- <a href='https://pngtree.com/so/background'>background png from pngtree.com</a> -->
+<!-- <a href="https://www.vecteezy.com/free-vector/western-pattern">Western Pattern Vectors by Vecteezy</a> -->
+<!-- <a href="https://www.vecteezy.com/free-vector/culture-pattern">Culture Pattern Vectors by Vecteezy</a> -->
+<!-- <a href="https://www.vecteezy.com/free-vector/native-american-patterns">Native American Patterns Vectors by Vecteezy</a> -->
+<!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by macrovector - www.freepik.com</a> -->
