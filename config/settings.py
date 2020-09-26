@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django_ajax',
     # My apps
     'people',
+    'jasmine_testing',
 ]
 
 
