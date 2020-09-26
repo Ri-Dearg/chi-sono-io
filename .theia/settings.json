@@ -17,5 +17,9 @@
       "**/.theia": true,
    },
 "emmet.extensionsPath": ".theia",
-"editor.autoSave": "on"
+"editor.autoSave": "on",
+"cSpell.words": [
+    "Lexend",
+    "getsizeof"
+]
 }
