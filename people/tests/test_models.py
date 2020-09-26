@@ -20,6 +20,13 @@ class TestPersonModel(TestCase):
             tags=['this', 'is', 'a', 'tag', 'list'])
         return super().setUp()
 
+    def test_same_image_does_not_re_upload(self):
+        person = Person.objects.latest('date')
+        new_photo = person.portrait
+        person.portrait = new_photo
+        person.save()
+        self.assertEqual(person.portrait, new_photo)
+
     def test_str(self):
         person = Person.objects.latest('date')
         self.assertEqual(str(person), 'A Person')
