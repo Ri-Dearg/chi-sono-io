@@ -14,6 +14,7 @@ class PersonListView(ListView):
     """Renders the home page with a Products List.
     If there is a GET request, performs a search."""
     model = Person
+    ordering = ['-date']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
