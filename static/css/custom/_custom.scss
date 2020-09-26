@@ -140,6 +140,8 @@ Product Box
 }
 
 .card-image {
+    width: 30vw;
+    height:auto;
 	-webkit-filter: blur(6px);
 	filter: blur(6px);
     background: #fff center center no-repeat;
@@ -153,6 +155,7 @@ Product Box
 
 /* Removes the blur on load*/
 .card-image.is-loaded {
+    width: auto;
     -webkit-filter: none;
 	filter: none;
 	-webkit-transition: -webkit-filter 1s;

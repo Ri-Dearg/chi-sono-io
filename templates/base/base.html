@@ -43,10 +43,7 @@
         {% block postloadjs %}
         <script src="{% static 'js/script.js' %}"></script>
         <script>
-        window.onload = function(){
-            window.document.body.onload = 
-            fadePreload()
-        }
+        document.addEventListener('DOMContentLoaded', fadePreload)
         </script>
         {% endblock %}
     </body>
