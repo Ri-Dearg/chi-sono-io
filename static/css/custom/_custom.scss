@@ -139,6 +139,29 @@ Product Box
     left: 0;
 }
 
+.card-image {
+	-webkit-filter: blur(6px);
+	filter: blur(6px);
+    background: #fff center center no-repeat;
+	background-size: cover;
+}
+
+/*Makes the thumbnail overlay invisible*/
+.card-image > img {
+	opacity: 0;
+}
+
+/* Removes the blur on load*/
+.card-image.is-loaded {
+    -webkit-filter: none;
+	filter: none;
+	-webkit-transition: -webkit-filter 1s;
+	transition: -webkit-filter 1s;
+	-o-transition: filter 1s;
+	transition: filter 1s;
+	transition: filter 1s, -webkit-filter 1s;
+}
+
 /*--------------------------------------------------------------------------
 SVG Icons
 --------------------------------------------------------------------------*/

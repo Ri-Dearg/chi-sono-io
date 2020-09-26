@@ -80,3 +80,25 @@ function ajaxModal() {
         openDetail(id, serializedData, formUrl);
     });
 }
+
+function lazyLoad() {
+	const cardImages = document.querySelectorAll(".card-image");
+
+	// loop over each image
+	cardImages.forEach(function (cardImage) {
+		const imageUrl = cardImage.getAttribute("data-image-full");
+		const contentImage = cardImage.querySelector("img");
+
+		// change src to full res image
+		contentImage.src = imageUrl;
+
+		// fires the swap function on load
+		contentImage.addEventListener("load", function () {
+			// sets the background as the full res image
+			cardImage.style.backgroundImage = "url(" + imageUrl + ")";
+
+			// applies class for a smooth transition to the gallery images
+			cardImage.classList.add("is-loaded");
+		});
+	});
+}

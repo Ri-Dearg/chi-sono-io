@@ -3,8 +3,8 @@
     <article class="card border-0 bg-dark">
         <form action="{% url 'people:person-detail-ajax' person.id %}" id="df-{{ person.id }}" class="text-center detail-form" method="GET">
             <input type="hidden" name="item-id" value="{{ person.id }}" />
-            <button type="submit" class="btn btn-link border border-white border-4 m-1 p-0">
-                <img src="{{ person.portrait.url }}" class="card-img-top img-fluid" alt="{{ person.name }}" />
+            <button type="submit" class="card-image btn btn-link border border-white border-4 m-1 p-0" style="background-image: url({{ person.thumb.url }});" data-image-full="{{ person.portrait.url }}">
+                <img src="{{ person.thumb.url }}" class="card-img-top img-fluid" alt="{{ person.name }}" />
             </button>
         </form>
         <div class="row card-body bg-dark mx-0 px-0 pt-1 pb-0">

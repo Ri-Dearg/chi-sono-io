@@ -5,6 +5,7 @@ var infinite = new Waypoint.Infinite({
     },
     onAfterPageLoad: function () {
         ajaxModal()
+        lazyLoad()
         $(".infinite-loader").hide();
     }
 });
