@@ -3,7 +3,7 @@ from django.test import TestCase
 from people.apps import PeopleConfig
 
 
-class TestpeopleConfig(TestCase):
+class TestPeopleConfig(TestCase):
 
     def test_app(self):
         self.assertEqual('people', PeopleConfig.name)
