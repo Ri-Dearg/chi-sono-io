@@ -194,30 +194,6 @@ object {
 }
 
 /*--------------------------------------------------------------------------
-Toasts
---------------------------------------------------------------------------*/
-
-.toast-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 300px;
-}
-
-.toast-position {
-position: fixed;
-top: 160px;
-right: 20px;
-min-height: 200px;
-z-index: 1056;
-}
-
-.toast {
-    z-index: 1057;
-}
-
-
-/*--------------------------------------------------------------------------
 Floating labels from: https://getbootstrap.com/docs/4.0/examples/floating-labels/
 --------------------------------------------------------------------------*/
 
