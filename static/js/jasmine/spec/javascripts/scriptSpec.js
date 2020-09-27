@@ -26,11 +26,19 @@ describe("lazyLoad", function () {
             lazyLoad()
             expect($(`.card-image > img`).first()).toHaveAttr('src', $(`img`).parent().attr('data-image-full'))
     })
-    // it("Should add a class for transitions after the function.", function () {
+    it("Should trigger a load event.", function () {
+            lazyLoad()
+            spyEvent = spyOnEvent(".card-image > img", "load")
+            $(".card-image > img").trigger( "load" )
+
+            expect("load").toHaveBeenTriggeredOn(".card-image > img")
+            expect(spyEvent).toHaveBeenTriggered()
+    })
+    // WIll figure out in the future.
+    // it("Should add the is-loaded class", function () {
     //         lazyLoad()
     //         $(".card-image > img").trigger( "load" )
-    //         let cardImage = $(`.card-image`).first()
-    //                     console.log($(cardImage[0]))
-    //         expect(cardImage).toHaveClass('is-loaded')
+    //         console.log(($(`.card-image`))[0])
+    //         expect($(`.card-image`)[0]).toHaveAttr('class', 'is-loaded')
     // })
 })
