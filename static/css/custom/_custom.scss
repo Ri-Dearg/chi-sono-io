@@ -61,13 +61,17 @@ Fonts
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
     color: #f8f8f8;
-    @media (max-width: 424px) {
+    @media (max-width: 359px) {
+        letter-spacing: 0.25rem;
+        font-weight: 400;
+    }
+    @media (min-width: 360px) and (max-width: 500px) {
         letter-spacing: 0.5rem;
     }
-    @media (min-width: 425px) {
+    @media (min-width: 501px) {
         letter-spacing: 1rem;
     }
-    font-weight: 800
+    font-weight: 800;
 }
 
 
