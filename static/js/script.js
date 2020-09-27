@@ -7,8 +7,7 @@ var player;
 var firstRun = true 
 
 function onPlayerReady(event) {
-    const modal = $("#person-modal").contents();
-    modal.find(".fade-load").on("load", fadePreload)
+    setTimeout (fadePreload, 2000)
 }
 
 function createVideoListener() {
@@ -22,10 +21,11 @@ function createVideoListener() {
                 'enablejsapi': 1,
                 'origin': window.location.origin,
             },
-            events: {
-                'onReady': onPlayerReady,
-            }
+            // events: {
+            //     'onReady': onPlayerReady,
+            // }
         });
+        onPlayerReady()
     })
     $('#person-modal').on('hide.bs.modal', function (e) {
         player.destroy()
