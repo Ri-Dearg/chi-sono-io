@@ -197,10 +197,10 @@ if not DEVELOPMENT:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
     STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'config.custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'config.custom_storage.StaticStorage'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 
     # Media Settings
     MEDIAFILES_LOCATION = 'media'
-    DEFAULT_FILE_STORAGE = 'config.custom_storages.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'config.custom_storage.MediaStorage'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
