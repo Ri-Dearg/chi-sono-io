@@ -29,11 +29,11 @@ class TestPeopleViews(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
-        self.assertTemplateUsed(response, 'people/person_detail.html')
+        self.assertTemplateUsed(response, 'people/includes/person_layout.html')
         self.assertTemplateUsed(response, 'people/includes/person_box.html')
         self.assertTemplateUsed(response, 'people/includes/detail_modal.html')
 
-        self.assertQuerysetEqual(response.context['people'],
+        self.assertQuerysetEqual(response.context['page_obj'],
                                  Person.objects.all(),
                                  transform=lambda x: x)
 
@@ -41,7 +41,7 @@ class TestPeopleViews(TestCase):
         response = self.client.get('/?query=')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
-        self.assertTemplateUsed(response, 'people/person_detail.html')
+        self.assertTemplateUsed(response, 'people/includes/person_layout.html')
         self.assertTemplateUsed(response, 'people/includes/person_box.html')
         self.assertTemplateUsed(response, 'people/includes/detail_modal.html')
 
@@ -59,7 +59,7 @@ class TestPeopleViews(TestCase):
 
         # Returns search results in order of rank,
         # removing items with no rank.
-        self.assertQuerysetEqual(response.context['people'],
+        self.assertQuerysetEqual(response.context['page_obj'],
                                  Person.objects.annotate(
                     rank=self.rank).order_by(
                     '-rank').filter(rank__gt=0),
@@ -68,7 +68,7 @@ class TestPeopleViews(TestCase):
         response = self.client.get('/?query=tag?page=2')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
-        self.assertTemplateUsed(response, 'people/person_detail.html')
+        self.assertTemplateUsed(response, 'people/includes/person_layout.html')
         self.assertTemplateUsed(response, 'people/includes/person_box.html')
         self.assertTemplateUsed(response, 'people/includes/detail_modal.html')
 
@@ -81,5 +81,4 @@ class TestPeopleViews(TestCase):
                                    HTTP_X_REQUESTED_WITH='XMLHttpRequest')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/includes/detail_modal.html')
-        self.assertTemplateUsed(response, 'people/person_detail.html')
-
+        self.assertTemplateUsed(response, 'people/includes/person_layout.html')
