@@ -14,8 +14,8 @@
 
 <button class="d-none" id="modal-trigger" data-toggle="modal" data-target="#person-modal"></button>
 
-{% if people.has_next %} 
-<a class="infinite-more-link d-none" href="{{ request.path }}?page={{ people.next_page_number }}"></a>
+{% if page_obj.has_next %} 
+<a class="infinite-more-link d-none" href="{{ request.path }}?page={{ page_obj.next_page_number }}"></a>
 {% endif %}
 
 <!-- The loading spinner for the scroll. -->

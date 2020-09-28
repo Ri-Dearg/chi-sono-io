@@ -8,22 +8,16 @@ from django.core.paginator import Paginator
 from django_ajax.decorators import ajax
 
 from .models import Person
+from .custom_mixins import RandomQuerysetMixin
 
 
-class PersonListView(ListView):
+class PersonListView(RandomQuerysetMixin, ListView):
     """Renders the home page with a Products List.
     If there is a GET request, performs a search."""
     model = Person
-    ordering = ['-date']
+    context_object_name = 'people'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        people = context['object_list']
-        paginator = Paginator(people, 3)
-        page_number = self.request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
-        context['people'] = page_obj
-        return context
+
 
 
 @ajax
