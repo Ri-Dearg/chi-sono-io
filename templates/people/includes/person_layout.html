@@ -12,6 +12,9 @@
                 <div class="col-12 position-absolute w-100 h-100" id="player">
                 </div>
             </div>
+            <div class="col-12">
+                <p class="col-12 text-white mb-2 p-0">{% for tag in active_person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="btn btn-light text-dark rounded-sm shadow mb-1 px-1 py-0">#{{ tag }}</a> {% endfor %}</p>
+            </div>
         </div>
     </div>
 </div>
