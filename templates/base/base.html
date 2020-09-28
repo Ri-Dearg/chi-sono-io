@@ -31,12 +31,6 @@
             {% block content %} {% endblock %}
         </section>
 
-        <div class="toast-position" aria-live="polite" aria-atomic="true">
-            <div class="toast-wrapper">
-                {% if messages %} {% for message in messages %} {% include 'base/includes/messages.html' %} {% endfor %} {% endif %}
-            </div>
-        </div>
-
 {% block modal%}
 {% endblock %}
 

@@ -61,13 +61,17 @@ Fonts
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
     color: #f8f8f8;
-    @media (max-width: 424px) {
+    @media (max-width: 359px) {
+        letter-spacing: 0.25rem;
+        font-weight: 400;
+    }
+    @media (min-width: 360px) and (max-width: 500px) {
         letter-spacing: 0.5rem;
     }
-    @media (min-width: 425px) {
+    @media (min-width: 501px) {
         letter-spacing: 1rem;
     }
-    font-weight: 800
+    font-weight: 800;
 }
 
 
@@ -183,40 +187,15 @@ object {
     height: 2.2rem;    
 }
 
-.box-object {
-    width: 1.5rem;
-    height: 1.5rem;
+.nav-object {
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .search-object {
-    height: 1rem;
-    width: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
 }
-
-
-/*--------------------------------------------------------------------------
-Toasts
---------------------------------------------------------------------------*/
-
-.toast-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 300px;
-}
-
-.toast-position {
-position: fixed;
-top: 160px;
-right: 20px;
-min-height: 200px;
-z-index: 1056;
-}
-
-.toast {
-    z-index: 1057;
-}
-
 
 /*--------------------------------------------------------------------------
 Floating labels from: https://getbootstrap.com/docs/4.0/examples/floating-labels/

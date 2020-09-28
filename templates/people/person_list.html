@@ -14,7 +14,10 @@
 
 <button class="d-none" id="modal-trigger" data-toggle="modal" data-target="#person-modal"></button>
 
-{% if people.has_next %} 
+<!-- If a search query is in the URL, a more complicated path is necessary for the scroll.-->
+{% if people.has_next %} {% if 'query' in request.get_full_path %}
+<a class="infinite-more-link d-none" href="{{ request.path }}?query={{ keyword }}?page={{ people.next_page_number }}"></a>
+{% else %}
 <a class="infinite-more-link d-none" href="{{ request.path }}?page={{ people.next_page_number }}"></a>
 {% endif %}
 
@@ -24,7 +27,7 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-
+{% endif %}
 {% endblock%}
 
 {% block modal%}
