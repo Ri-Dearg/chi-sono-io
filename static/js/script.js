@@ -21,15 +21,26 @@ function createVideoListener() {
                 'enablejsapi': 1,
                 'origin': window.location.origin,
             },
-            // events: {
-            //     'onReady': onPlayerReady,
-            // }
         });
         onPlayerReady()
     })
+
     $('#person-modal').on('hide.bs.modal', function (e) {
         player.destroy()
     })
+
+    if ($("#person-modal").length == 0) {
+            player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: interviewVideo,
+            playerVars: {
+                'hl': 'it',
+                'enablejsapi': 1,
+                'origin': window.location.origin,
+            },
+        });
+    }
 }
 
 function onYouTubeIframeAPIReady() {
