@@ -2,6 +2,15 @@ function fadePreload() {
     $(".preloader").fadeOut(1200);
 }
 
+function searchFocus() {
+    $("#search-button").on("click", function() {
+        setTimeout( function() {
+            $("#search-input").focus()
+        }, 100)
+        $("#search-input").focus()
+        console.log($("#search-button"), $("#search-input"))
+    })
+}
 
 function smoothFade() {
     $("#search-form").unbind('submit').on("submit", function(ev) {

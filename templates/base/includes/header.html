@@ -5,7 +5,7 @@
         <span class="w-100 d-block"></span>
         <h1 class="my-2 brand-logo navbar-brand"><a class="smooth-click" href="{% url 'people:person-list' %}">CHI.SONO.IO</a></h1>
         <div class="d-flex w-100 text-right align-content-center">
-            <button type="button" class="btn btn-dark shadow-none ml-auto" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+            <button id="search-button" type="button" class="btn btn-dark shadow-none ml-auto" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
                 <object class="nav-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
                     <img src="{% static 'icons/search.svg' %}" alt="Cerca" />
                 </object>                    
@@ -19,7 +19,7 @@
     <div class="form-row">
             <form id="search-form" class="col col-md-5 col-lg-4 col-xl-3 ml-auto my-2" method="GET" action="{% url 'people:person-list' %}">
                 <div class="input-group ml-auto mr-1">
-                    <input class="form-control" type="text" name="query" placeholder="Cerca" />
+                    <input id="search-input" class="form-control" type="text" name="query" placeholder="Cerca" />
                     <div class="input-group-append">
                         <button class="btn btn-secondary px-1 py-0" type="submit">
                             <object class="search-object mt-1" type="image/svg+xml" data="{% static 'icons/right-arrow.svg' %}">
