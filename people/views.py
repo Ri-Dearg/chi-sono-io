@@ -23,13 +23,13 @@ class PersonListView(ListView):
         """Returns either all Products or a query appropriately."""
         if 'query' in self.request.GET:
             # Returns all people if there's no query
-            if (self.request.GET['query'] == ''):
+            if (self.request.GET['query'].split('?')[0] == ''):
                 self.postgres_setseed()
                 return super(ListView, self).get_queryset().order_by('?')
             else:
                 # Performs a full text search using Postgres database
                 # functionality, weighting tags above other text.
-                self.user_query = self.request.GET['query']
+                self.user_query = self.request.GET['query'].split('?')[0]
                 self.vector = SearchVector(
                     'name',
                     'blurb',
@@ -49,11 +49,15 @@ class PersonListView(ListView):
             return super(ListView, self).get_queryset().order_by('?')
 
     def get(self, *args, **kwargs):
-        page = self.request.GET.get('page')
-        if not page or page == '1':
-            self.generate_seed()
+        get_req = self.request.GET
+        if 'query' not in get_req or get_req['query'].split('?')[0] == '':
+            page = get_req.get('page')
+            if ('query' in get_req) and ('page' in get_req['query']):
+                page = get_req['query'].rpartition('=')[-1]
+            if not page or page == '1':
+                self.generate_seed()
 
-        self.seed = self.get_seed()
+            self.seed = self.get_seed()
 
         return super(ListView, self).get(*args, **kwargs)
 
@@ -79,7 +83,9 @@ class PersonListView(ListView):
 
         # Paginates people for the infinite scroll feature.
         people = context['object_list']
+        # print(people)
         paginator = Paginator(people, 3)
+        # print(paginator.per_page)
         page_number = self.request.GET.get('page')
 
         # Pagination is more complicated with a query
@@ -92,7 +98,7 @@ class PersonListView(ListView):
             context['keyword'] = keyword
 
         page_obj = paginator.get_page(page_number)
-        context['people'] = page_obj
+        context['page_obj'] = page_obj
         return context
 
 

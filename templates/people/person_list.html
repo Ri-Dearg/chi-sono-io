@@ -3,7 +3,7 @@
 <hr />
 {% endif %}
 <div class="row infinite-container">
-    {% if people %} {% for person in people %} {% include 'people/includes/person_box.html' %} {% endfor %} {% else %}
+    {% if page_obj %} {% for person in page_obj %} {% include 'people/includes/person_box.html' %} {% endfor %} {% else %}
     <div class="col text-center">
         <h4 class="text-dark">Nessun Risultato</h4>
         <h2 class="text-primary heading-font">Conosci nostre altre persone?</h2>
@@ -15,10 +15,10 @@
 <button class="d-none" id="modal-trigger" data-toggle="modal" data-target="#person-modal"></button>
 
 <!-- If a search query is in the URL, a more complicated path is necessary for the scroll.-->
-{% if people.has_next %} {% if 'query' in request.get_full_path %}
-<a class="infinite-more-link d-none" href="{{ request.path }}?query={{ keyword }}?page={{ people.next_page_number }}"></a>
+{% if page_obj.has_next %} {% if 'query' in request.get_full_path %}
+<a class="infinite-more-link d-none" href="{{ request.path }}?query={{ keyword }}?page={{ page_obj.next_page_number }}"></a>
 {% else %}
-<a class="infinite-more-link d-none" href="{{ request.path }}?page={{ people.next_page_number }}"></a>
+<a class="infinite-more-link d-none" href="{{ request.path }}?page={{ page_obj.next_page_number }}"></a>
 {% endif %}
 
 <!-- The loading spinner for the scroll. -->
