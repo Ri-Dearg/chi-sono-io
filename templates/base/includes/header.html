@@ -3,7 +3,7 @@
     <nav class="navbar bg-dark navbar-dark w-100">
     <div class="d-flex flex-grow-1">
         <span class="w-100 d-block"></span>
-        <h1 class="my-2 brand-logo navbar-brand"><a href="{% url 'people:person-list' %}">CHI.SONO.IO</a></h1>
+        <h1 class="my-2 brand-logo navbar-brand"><a class="smooth-click" href="{% url 'people:person-list' %}">CHI.SONO.IO</a></h1>
         <div class="d-flex w-100 text-right align-content-center">
             <button type="button" class="btn btn-dark shadow-none ml-auto" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
                 <object class="nav-object" type="image/svg+xml" data="{% static 'icons/search.svg' %}">
@@ -17,7 +17,7 @@
     </div>
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSearch">
     <div class="form-row">
-            <form class="col col-md-5 col-lg-4 col-xl-3 ml-auto my-2" method="GET" action="{% url 'people:person-list' %}">
+            <form id="search-form" class="col col-md-5 col-lg-4 col-xl-3 ml-auto my-2" method="GET" action="{% url 'people:person-list' %}">
                 <div class="input-group ml-auto mr-1">
                     <input class="form-control" type="text" name="query" placeholder="Cerca" />
                     <div class="input-group-append">
@@ -34,13 +34,13 @@
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item {% if people_active %}active{% endif %}">
-                <a class="nav-link nav-link text-right" href="">Persone{% if home_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <a class="nav-link smooth-click text-right" href="">Persone{% if home_active %}<span class="sr-only">(current)</span>{% endif %}</a>
             </li>
             <li class="nav-item {% if about_active %}active{% endif %}">
-                <a class="nav-link nav-link text-right" href="">Il Progetto{% if about_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <a class="nav-link smooth-click text-right" href="">Il Progetto{% if about_active %}<span class="sr-only">(current)</span>{% endif %}</a>
             </li>
             <li class="nav-item {% if contact_active %}active{% endif %}">
-                <a class="nav-link nav-link text-right" href="">Contatto{% if contact_active %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <a class="nav-link smooth-click text-right" href="">Contatto{% if contact_active %}<span class="sr-only">(current)</span>{% endif %}</a>
             </li>
         </ul>
     </div>

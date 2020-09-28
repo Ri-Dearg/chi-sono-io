@@ -6,6 +6,7 @@ var infinite = new Waypoint.Infinite({
     onAfterPageLoad: function () {
         ajaxModal()
         lazyLoad()
+        smoothFade()
         $(".infinite-loader").hide();
     }
 });

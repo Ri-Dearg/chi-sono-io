@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <p class="col-12 text-white mb-2 p-0">{% for tag in active_person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="btn btn-light text-dark rounded-sm shadow mb-1 px-1 py-0">#{{ tag }}</a> {% endfor %}</p>
+                <p class="col-12 text-white mb-2 p-0">{% for tag in active_person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="smooth-click btn btn-light text-dark rounded-sm shadow mb-1 px-1 py-0">#{{ tag }}</a> {% endfor %}</p>
             </div>
         </div>
     </div>

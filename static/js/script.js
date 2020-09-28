@@ -2,6 +2,26 @@ function fadePreload() {
     $(".preloader").fadeOut(1200);
 }
 
+
+function smoothFade() {
+    $("#search-form").unbind('submit').on("submit", function(ev) {
+        ev.preventDefault()
+        let form = this
+        $(".preloader").fadeIn(1000);
+        setTimeout(function(){
+        form.submit();
+    }, 800);
+    })
+    $(".smooth-click").unbind('click').on("click", function(ev) {
+        ev.preventDefault()
+        var goTo = this.getAttribute("href")
+        $(".preloader").fadeIn(1000);
+        setTimeout(function(){
+         window.location = goTo;
+    }, 800);
+    })
+}
+
 var interviewVideo;
 var player;
 var firstRun = true 
