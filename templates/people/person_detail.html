@@ -1,23 +1,9 @@
-<div class="row rounded" style="background-image: url('{{ active_person.pattern1.url }}')">
-    <div class="col-12 col-md-5 text-center rounded p-3 p-md-4 p-lg-5">
-        <img class="img-fluid bg-white p-1" src="{{ active_person.portrait.url }}" alt="{{ active_person.name }}">
-    </div>
-    <div class="col-12 col-md-7 d-flex px-0">
-        <div class="row w-100 align-content-center rounded m-3 m-md-4 m-lg-5" style="background-color: {{ active_person.pattern1_bg }}">
-            <div class="col-12">
-                <h3 class="text-center text-md-left heading-font mt-3" style="color: {{ active_person.pattern1_txt }}">{{ active_person.name }}</h3>
-                <h6 class="text-center text-md-left font-italic" style="color: {{ active_person.pattern1_txt }}">"{{ active_person.blurb }}"</h6>
-            </div>
-            <div class="w-100 position-relative mb-3" id="player-container">
-                <div class="col-12 position-absolute w-100 h-100" id="player">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row rounded">
-    <div class="col-12" style="background-color: {{ active_person.pattern1_bg }}">
-        <h3 class="mb-1 mx-2 mt-2 mx-sm-3 mt-sm-3 mx-lg-4 mt-lg-4 mx-xl-5 mt-xl-5" style="color: {{ active_person.pattern1_txt }}">La Mia Storia</h3>
-        <p class="mt-1 mx-2 mb-2 mx-sm-3 mb-sm-3 mx-lg-4 mb-lg-4 mx-xl-5 mb-xl-5" style="color: {{ active_person.pattern1_txt }}">{{ active_person.story }}</p>
-    </div>
-</div>
+{% extends 'base/base.html' %} {% block head_title %}Home{% endblock%} {% load static %} {% block content %}
+    {% include 'people/includes/person_layout.html' %}
+{% endblock%}
+
+{% block postloadjs %} {{ block.super }}
+    <script>
+    createVideo("{{ active_person.video }}")
+    </script>
+{% endblock %}

@@ -1,6 +1,9 @@
+import random
+
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
+from django.db import connection
 from django.contrib.postgres.search import (SearchQuery,
                                             SearchRank,
                                             SearchVector)
@@ -8,9 +11,6 @@ from django.contrib.postgres.search import (SearchQuery,
 from django_ajax.decorators import ajax
 
 from .models import Person
-
-import random
-from django.db import connection
 
 
 class PersonListView(ListView):
@@ -94,6 +94,12 @@ class PersonListView(ListView):
         page_obj = paginator.get_page(page_number)
         context['people'] = page_obj
         return context
+
+
+class PersonDetailView(DetailView):
+    """Renders a separate page specifically for each Person object"""
+    model = Person
+    context_object_name = 'active_person'
 
 
 @ajax
