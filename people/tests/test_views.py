@@ -39,6 +39,7 @@ class TestPeopleViews(TestCase):
 
     def test_search_functions(self):
         response = self.client.get('/?query=')
+        response = self.client.get('/?query=?page=2')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
         self.assertTemplateUsed(response, 'people/includes/person_layout.html')
@@ -65,12 +66,21 @@ class TestPeopleViews(TestCase):
                     '-rank').filter(rank__gt=0),
                                  transform=lambda x: x)
 
-        response = self.client.get('/?query=tag?page=2')
+        response = self.client.get('/?query=tag?page=3')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'people/person_list.html')
         self.assertTemplateUsed(response, 'people/includes/person_layout.html')
         self.assertTemplateUsed(response, 'people/includes/person_box.html')
         self.assertTemplateUsed(response, 'people/includes/detail_modal.html')
+
+    def test_render_person_detail(self):
+        person = Person.objects.latest('date')
+        response = self.client.get(f'/person/{person.id}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'people/person_detail.html')
+        self.assertTemplateUsed(response, 'people/includes/person_layout.html')
+
+        self.assertTrue(response.context['active_person'])
 
     def test_ajax_render_detail(self):
         person = Person.objects.latest('date')
