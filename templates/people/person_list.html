@@ -1,4 +1,15 @@
-{% extends 'base/base.html' %} {% block head_title %}IO{% endblock%} {% load static %} {% block content %} {% if 'query' in request.GET %}
+{% extends 'base/base.html' %} {% load static %} 
+
+{% block og_type %}website{% endblock %}
+{% block og_title %}Conoscenza e Integrazione{% endblock %}
+{% block og_description %}Fai contatto con il mondo di un altro.{% endblock %}
+{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'open_graph/people-list.png' %}{% endblock %}
+{% block og_image_type %}image/png{% endblock %}
+{% block og_image_width %}1919{% endblock %}
+{% block og_image_height %}895{% endblock %}
+
+{% block head_title %}IO{% endblock%}
+{% block content %} {% if 'query' in request.GET %}
 <h1 class="text-center heading-font text-primary">{{ request.GET.query }}</h1>
 <hr />
 {% endif %}
