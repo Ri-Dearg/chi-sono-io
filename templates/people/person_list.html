@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %} {% block head_title %}Home{% endblock%} {% load static %} {% block content %} {% if 'query' in request.GET %}
+{% extends 'base/base.html' %} {% block head_title %}IO{% endblock%} {% load static %} {% block content %} {% if 'query' in request.GET %}
 <h1 class="text-center heading-font text-primary">{{ request.GET.query }}</h1>
 <hr />
 {% endif %}
