@@ -25,7 +25,7 @@ Basic Layout
 }
 
 #person-modal .close {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .fixed-top {
@@ -47,6 +47,17 @@ Basic Layout
 
 .border-4 {
     border-width: 4px !important;
+}
+
+.modal-header {
+    min-height: 70px;
+}
+
+.float-close {
+    top: 95px;
+    right: 30px;
+    z-index: 3000;
+    opacity: 0.9;
 }
 
 /*--------------------------------------------------------------------------
