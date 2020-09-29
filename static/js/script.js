@@ -37,6 +37,10 @@ var firstRun = true
 
 function onPlayerReady(event) {
     setTimeout (fadePreload, 2000)
+    FB.XFBML.parse(document.getElementById('social-col'));
+    twttr.widgets.load(
+    document.getElementById("social-col")
+    );
 }
 
 function createVideoListener() {

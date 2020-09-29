@@ -1,8 +1,8 @@
 <div class="row rounded" style="background-image: url('{{ active_person.pattern1.url }}')">
-    <div class="col-12 col-md-5 text-center rounded p-3 p-md-4 p-lg-5">
+    <section class="col-12 col-md-5 text-center rounded p-3 p-md-4 p-lg-5">
         <img class="img-fluid bg-white p-1" src="{{ active_person.portrait.url }}" alt="{{ active_person.name }}">
-    </div>
-    <div class="col-12 col-md-7 d-flex px-0">
+    </section>
+    <section class="col-12 col-md-7 d-flex px-0">
         <div class="row w-100 align-content-center rounded m-3 m-md-4 m-lg-5" style="background-color: {{ active_person.pattern1_bg }}">
             <div class="col-12">
                 <h3 class="text-center text-md-left heading-font mt-3" style="color: {{ active_person.pattern1_txt }}">{{ active_person.name }}</h3>
@@ -15,12 +15,16 @@
             <div class="col-12">
                 <p class="col-12 text-white mb-2 p-0">{% for tag in active_person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="smooth-click btn btn-light text-dark rounded-sm shadow mb-1 px-1 py-0">#{{ tag }}</a> {% endfor %}</p>
             </div>
+            <div class="col-12" id="social-col">
+                <div class="fb-like" data-href="https://chi-sono-io.herokuapp.com/person/{{ active_person.id }}/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://chi-sono-io.herokuapp.com/person/{{ active_person.id }}/" data-hashtags="ChiSonoIo" data-lang="it" data-dnt="true" data-show-count="false">Tweet</a>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 <div class="row rounded">
-    <div class="col-12" style="background-color: {{ active_person.pattern1_bg }}">
+    <section class="col-12 fb-quotable" style="background-color: {{ active_person.pattern1_bg }}">
         <h3 class="mb-1 mx-2 mt-2 mx-sm-3 mt-sm-3 mx-lg-4 mt-lg-4 mx-xl-5 mt-xl-5" style="color: {{ active_person.pattern1_txt }}">La Mia Storia</h3>
         <p class="mt-1 mx-2 mb-2 mx-sm-3 mb-sm-3 mx-lg-4 mb-lg-4 mx-xl-5 mb-xl-5" style="color: {{ active_person.pattern1_txt }}">{{ active_person.story }}</p>
-    </div>
+    </section>
 </div>
