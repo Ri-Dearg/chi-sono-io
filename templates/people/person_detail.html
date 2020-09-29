@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %} {% block head_title %}Home{% endblock%} {% load static %} {% block content %}
+{% extends 'base/base.html' %} {% block head_title %}{{ active_person.name }}{% endblock%} {% load static %} {% block content %}
     {% include 'people/includes/person_layout.html' %}
 {% endblock%}
 
