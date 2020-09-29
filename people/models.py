@@ -16,6 +16,8 @@ class Person(models.Model):
     story = models.TextField()
     video = models.URLField()
     portrait = models.ImageField(upload_to='portraits')
+    open_graph = models.ImageField(upload_to='portraits/open_graph',
+                                   blank=True)
     thumb = models.ImageField(upload_to='portraits/thumbs', blank=True)
     pattern1 = models.ImageField(upload_to='patterns', default='')
     pattern1_bg = models.CharField(max_length=7, blank=True, default='#000000')
