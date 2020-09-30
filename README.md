@@ -47,3 +47,4 @@ Happy coding!
 <!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by macrovector - www.freepik.com</a> -->
 <!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by 0melapics - www.freepik.com</a> -->
 <!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a> -->
+<!-- Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
