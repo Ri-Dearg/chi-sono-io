@@ -1,7 +1,7 @@
 Ciao, {{ name }},
 
 Grazie per contattarci a Chi Sono Io.
-Abbiamo ricevuto il tuo messagio e ti risponderemo al piú presto
+Abbiamo ricevuto il tuo messagio e ti risponderemo al piú presto.
 
 Cordiali Saluti,
 Chi Sono Io

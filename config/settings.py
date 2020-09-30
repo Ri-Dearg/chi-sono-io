@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'django_ajax',
     # My apps
     'people',
+    'info',
     'jasmine_testing',
 ]
 
@@ -204,3 +205,18 @@ if not DEVELOPMENT:
     MEDIAFILES_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'config.custom_storage.MediaStorage'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+# If in development, emails are displayed in the terminal
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'example@example.com'
+
+# Else emails are sent using real account settings
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
