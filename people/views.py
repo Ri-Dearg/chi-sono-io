@@ -99,6 +99,11 @@ class PersonListView(ListView):
 
         page_obj = paginator.get_page(page_number)
         context['page_obj'] = page_obj
+
+        people_active = True
+
+        context['people_active'] = people_active
+
         return context
 
 

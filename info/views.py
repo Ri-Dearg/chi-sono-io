@@ -1,7 +1,23 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .models import Email
+from .models import Email, About
+
+
+class AboutTemplate(TemplateView):
+    template_name = "info/about.html"
+
+    def get_context_data(self, **kwargs):
+        """Adds all necessary information to the context.
+        Mainly just highlights the "Contact" in the navbar."""
+        context = super().get_context_data(**kwargs)
+        about_active = True
+
+        about = About.objects.get(pk=1)
+
+        context['about'] = about
+        context['about_active'] = about_active
+        return context
 
 
 # Create your views here.

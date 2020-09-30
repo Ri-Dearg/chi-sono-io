@@ -19,7 +19,7 @@ class TestPeopleViews(TestCase):
             blurb='This is a blurb',
             story='This is the story they are telling',
             video='https://www.youtube.com/watch?v=9xwazD5SyVg',
-            open_graph = new_photo,
+            open_graph=new_photo,
             portrait=new_photo,
             pattern1=new_photo,
             tags=['this', 'is', 'a', 'tag', 'list'])
