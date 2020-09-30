@@ -15,7 +15,7 @@
             <div class="col-12">
                 <p class="col-12 text-white mb-2 p-0">{% for tag in active_person.tags %} <a href="{% url 'people:person-list' %}?query={{ tag }}" class="smooth-click btn btn-light text-dark rounded-sm shadow mb-1 px-1 py-0">#{{ tag }}</a> {% endfor %}</p>
             </div>
-            <div class="col-12" id="social-col">
+            <div class="col-12 mb-2" id="social-col">
                 <div class="fb-like" data-href="https://chi-sono-io.herokuapp.com/person/{{ active_person.id }}/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://chi-sono-io.herokuapp.com/person/{{ active_person.id }}/" data-hashtags="ChiSonoIo" data-lang="it" data-dnt="true" data-show-count="false">Tweet</a>
             </div>
