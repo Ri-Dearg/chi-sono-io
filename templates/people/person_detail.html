@@ -3,7 +3,7 @@
 {% block og_type %}article{% endblock %}
 {% block og_title %}{{ active_person.name }}{% endblock %}
 {% block og_description %}&quot;{{ active_person.blurb }}&quot;{% endblock %}
-{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{{ active_person.open_graph.url }}{% endblock %}
+{% block og_image %}{{ active_person.open_graph.url }}{% endblock %}
 {% block og_image_type %}image/png{% endblock %}
 {% block og_image_width %}{{ active_person.open_graph.width }}{% endblock %}
 {% block og_image_height %}{{ active_person.open_graph.height }}{% endblock %}
