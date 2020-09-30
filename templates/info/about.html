@@ -1,8 +1,17 @@
-{% extends 'base/base.html' %} {% load static %} {% block head_title %}Il Progetto{% endblock%} {% block content %}
+{% extends 'base/base.html' %} {% load static %} 
+{% block og_type %}article{% endblock %}
+{% block og_title %}Chi Siamo Noi?{% endblock %}
+{% block og_description %}Scoprire il progetto.{% endblock %}
+{% block og_image %}{% static 'open_graph/about.png' %}{% endblock %}
+{% block og_image_type %}image/png{% endblock %}
+{% block og_image_width %}332{% endblock %}
+{% block og_image_height %}70{% endblock %}
+{% block head_title %}Chi Siamo Noi?{% endblock%}
+{% block content %}
 <div class="row align-items-start">
     <h1 class="col-12 text-center text-primary heading-font pt-3"><strong>{{ about.title }}</strong></h1>
     <div class="col-10 col-sm-8 col-md-6 col-lg-3 py-3 mx-auto rounded" style="background-image: url('{{ about.background.url }}')">
-    <p class="bg-primary p-3 rounded">{{about.content }}</p>
+        <p class="bg-primary p-3 rounded">{{ about.content }}</p>
     </div>
 </div>
 {% endblock %}
